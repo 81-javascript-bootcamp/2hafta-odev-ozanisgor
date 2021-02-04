@@ -53,7 +53,7 @@ function isValidName(name) {
     console.log("Name must be filled out");
     return false;
   } else if (regexResult === false) {
-    console.log("Name must be at least 3 alphanumeric characters");
+    console.log("Name must be compose of at least 2 alphabetic characters");
     return false;
   }
   return true;
