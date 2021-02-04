@@ -41,17 +41,17 @@ bosluk icerebilir, ancak bosluk haridcindeki isimler en az 2 karakterden olusmal
 **/
 
 function isValidName(name) {
-  const regex = /([a-zA-Z]{3,}\s*)+/;
+  const regex = /^([a-zA-Z]{2,}\s*)+$/;
+  const regexResult = regex.test(name);
 
   if (typeof name != "string") {
     return false;
   } else if (name == "") {
     console.log("Name must be filled out");
     return false;
-  } else if (!regex.test(name)) {
+  } else if (regexResult === false) {
     console.log("Name must be at least 3 alphanumeric characters");
     return false;
-    //Sir, I am not %100 sure using "!" is the most reliable way on line 51 to make it false. The regex that i created is covering all the expectations. So inside of the paranthesis become true but in fact we need the results besides that regex matches. To make it work I added "!" on line 51 just before the regex. With this way all the tests return true but I am still not comfortable with "!". That would be great to have a comment from you about this case sir.
   }
   return true;
 }
