@@ -41,6 +41,9 @@ bosluk icerebilir, ancak bosluk haridcindeki isimler en az 2 karakterden olusmal
 **/
 
 function isValidName(name) {
+
+  // I've changed the regex because it was still match even if the 3rd name was less then 3 characters. Also created a new variable called regexResult to store pattern and according to new variable I changed logic for the last 'else if' statement. Now pattern matches more then 2 words with at least 2 characters.
+
   const regex = /^([a-zA-Z]{2,}\s*)+$/;
   const regexResult = regex.test(name);
 
